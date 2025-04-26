@@ -6,10 +6,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ route('homepage') }}">Home</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="{{ route('article.index') }}">Tutti gli articoli</a>
                 </li>
                 @auth
@@ -32,6 +28,11 @@
                         @if(Auth::user()->is_revisor)
                         <li>
                             <a class="dropdown-item" href="{{ route('revisor.dashboard') }}">Revisioni</a>
+                        </li>
+                        @endif
+                        @if(Auth::user()->is_writer)
+                        <li>
+                            <a class="dropdown-item" href="{{ route('writer.dashboard') }}">Workspace</a>
                         </li>
                         @endif
                         <li>
