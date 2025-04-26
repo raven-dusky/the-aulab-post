@@ -12,6 +12,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('article.index') }}">Tutti gli articoli</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('careers') }}">Lavora con noi</a>
+                </li>
                 @auth
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('article.create') }}">Inserisci un articolo</a>
@@ -19,6 +22,16 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ciao {{ Auth::user()->name }}</a>
                     <ul class="dropdown-menu">
+                        @if(Auth::user()->is_admin)
+                        <li>
+                            <a class="dropdown-item" href="{{ route('admin.dashboard') }}">Amministrazione</a>
+                        </li>
+                        @endif
+                        @if(Auth::user()->is_revisor)
+                        <li>
+                            <a class="dropdown-item" href="{{ route('revisor.dashboard') }}">Revisioni</a>
+                        </li>
+                        @endif
                         <li>
                             <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
                         </li>

@@ -17,8 +17,25 @@ class DatabaseSeeder extends Seeder
 
         User::factory()->create([
             'name' => 'Administrator',
-            'email' => 'admin@email.com',
+            'email' => 'admin@theaulabpost.it',
             'password' => bcrypt('password'),
+            'is_admin' => true,
+            'is_revisor' => true,
+            'is_writer' => true,
+        ]);
+
+        User::factory()->create([
+            'name' => 'CoolDeer98',
+            'email' => 'cooldeer98@email.com',
+            'password' => bcrypt('password'),
+            'is_revisor' => true,
+        ]);
+
+        User::factory()->create([
+            'name' => 'User',
+            'email' => 'user@email.com',
+            'password' => bcrypt('password'),
+            'is_writer' => true,
         ]);
     }
 }
