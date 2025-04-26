@@ -9,7 +9,7 @@
     <div class="container my-5">
         <div class="row">
             <div class="col-12 col-md-6">
-                <form action="{{ route('careers.submit) }}" method="POST" class="card p-5 shadow">
+                <form action="{{ route('careers.submit') }}" method="POST" class="card p-5 shadow">
                     @csrf
                     <div class="mb-3">
                         <label for="role" class="form-label">Per quale ruolo ti stai candidando?</label>
@@ -24,7 +24,7 @@
                             @if (!Auth::user()->is_writer)
                             <option value="writer">Redattore</option>
                             @endif
-                        <select>
+                        </select>
                         @error('role')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
