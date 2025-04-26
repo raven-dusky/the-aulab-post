@@ -15,6 +15,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $article->title }}</h5>
                         <p class="card-subtitle">{{ $article->subtitle }}</p>
+                        <p class="small text-muted">Categoria:  <a href="{{ route('article.byCategory', $article->category) }}" class="text-capitalize text-muted">{{ $article->category->name }}</a></p>
                     </div>
                     <div class="card-footer d-flex justify-content-between">
                         <p>Redatto il {{ $article->created_at->format('d/m/Y') }}<br>da {{ $article->user->name }}</p>
