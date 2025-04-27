@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Article;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -37,5 +39,24 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password'),
             'is_writer' => true,
         ]);
+
+        $values = [
+            'is_accepted' => true,
+            'is_rejected' => false,
+            'is_pending' => NULL,
+        ];
+
+        for($i = 0; $i <= 10; $i++) {
+            Article::create([
+                'title' => 'Articolo #' . $i,
+                'subtitle' => 'Sottotitolo #' . rand(1, 100),
+                'body' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                'image' => 'images/default.jpg',
+                'user_id' => 1,
+                'category_id' => rand(1, 6),
+                'is_accepted' => $values[array_rand($values)],
+                'slug' => Str::slug('Articolo #' . $i),
+            ]);
+        }
     }
 }

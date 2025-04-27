@@ -13,6 +13,7 @@
                 #{{ $tag->name }}
             @endforeach
         </p>
+        <p class="card-subtitle text-muted fst-italic">tempo di lettura {{ $article->readDuration() }} min</p>
     </div>
     <div class="card-footer d-flex justify-content-between aling-items-center">
         <p>Redatto il {{ $article->created_at->format('d/m/Y') }}<br>da <a href="{{ route('article.byUser', $article->user) }}">{{ $article->user->name }}</a></p>
