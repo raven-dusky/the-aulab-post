@@ -1,61 +1,61 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# The Aulab Post
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**The Aulab Post** is an online news platform where registered users can submit, manage, and review articles.  
+The project includes role-based access control (Admin, Revisor, Writer) and a full editorial workflow with fact-checking and article validation.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### User Accounts
+- ✍️ Writers can register/login to submit articles.
+- 📄 Articles are made of:
+  - Title
+  - Subtitle
+  - Body content
+  - Cover image
+  - Predefined categories
+- 🎯 Upon submitting an article, a confirmation message appears.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Article Management
+- 🆕 Writers can edit or delete their own articles.
+- 🔄 If an article is modified, it returns to the revision process.
+- 🧹 On image update or article deletion, old images are removed from storage.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Browsing Articles
+- 📰 Home displays the most recent articles (sorted newest to oldest).
+- 🔎 Detailed article pages available.
+- 📚 Search articles by:
+  - Title
+  - Subtitle
+  - Category
+  - Writer
 
-## Learning Laravel
+### Fact-Checking Workflow
+- 👥 Role system:
+  - **Admin:** Full control, including managing tags and categories.
+  - **Revisor:** Can review and accept or reject articles.
+  - **Writer:** Can submit, edit, and manage personal articles.
+- 🛠️ "Work with us" form for users to apply to become part of the team.
+- 📊 Dedicated dashboard for admins to manage incoming team applications.
+- ✅ Revisors have a dashboard to review articles with "Accept" or "Reject" actions.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Tags and Categories
+- 🏷️ Admins can create, edit, and delete tags and categories.
+- 🔗 Many-to-Many relationship between Tags and Articles.
+- 🧠 Tags are used in page meta-data for better SEO.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Extras
+- 🌐 Friendly URL slugs based on the article title.
+- ⏱️ Automatic reading time estimation displayed in article detail pages.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Getting Started
 
-## Laravel Sponsors
+Follow these steps to install and run **The Aulab Post** locally:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+git clone https://github.com/your-username/the-aulab-post.git
+cd the-aulab-post
+composer install
+npm install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate:fresh --seed
