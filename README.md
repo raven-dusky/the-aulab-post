@@ -52,7 +52,7 @@ The project includes role-based access control (Admin, Revisor, Writer) and a fu
 Follow these steps to install and run **The Aulab Post** locally:
 
 ```bash
-git clone https://github.com/your-username/the-aulab-post.git
+git clone https://github.com/raven-dusky/the-aulab-post.git
 cd the-aulab-post
 composer install
 npm install
