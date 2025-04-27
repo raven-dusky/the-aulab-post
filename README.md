@@ -1,4 +1,4 @@
-# The Aulab Post
+# The Aulab Post (Styling still work in progress...)
 
 **The Aulab Post** is an online news platform where registered users can submit, manage, and review articles.  
 The project includes role-based access control (Admin, Revisor, Writer) and a full editorial workflow with fact-checking and article validation.
