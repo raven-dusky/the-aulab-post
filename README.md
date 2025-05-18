@@ -1,4 +1,4 @@
-# The Aulab Post (Styling still work in progress...)
+# The Aulab Post
 
 **The Aulab Post** is an online news platform where registered users can submit, manage, and review articles.  
 The project includes role-based access control (Admin, Revisor, Writer) and a full editorial workflow with fact-checking and article validation.
@@ -47,15 +47,48 @@ The project includes role-based access control (Admin, Revisor, Writer) and a fu
 - 🌐 Friendly URL slugs based on the article title.
 - ⏱️ Automatic reading time estimation displayed in article detail pages.
 
-## Getting Started
+## 🛠 Tech Stack
 
-Follow these steps to install and run **The Aulab Post** locally:
+- PHP
+- Laravel
+- Eloquent
+- Fortify
+- Livewire
+- MySQL
+- Bootstrap
+
+---
+
+## ⚡ Installation & Local Setup
+
+Follow these steps to clone and run the project locally:
 
 ```bash
-git clone https://github.com/raven-dusky/the-aulab-post.git
-cd the-aulab-post
+# Clone the repository
+git clone https://github.com/raven-dusky/linqly.me.git
+cd linqly.me
+
+# Install dependencies
 composer install
 npm install
+
+# Setup environment configuration
 cp .env.example .env
 php artisan key:generate
-php artisan migrate:fresh --seed
+
+# Configure database and mail settings in .env
+# (Edit the following lines inside the .env file)
+# DB_DATABASE=your_db
+# DB_USERNAME=your_user
+# DB_PASSWORD=your_password
+# MAIL_...
+
+# Run database migrations with seeding
+php artisan migrate --seed
+
+# Start local development server
+php artisan serve
+
+# In a separate terminal, compile assets with Vite
+npm run dev
+```
