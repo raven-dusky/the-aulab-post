@@ -17,11 +17,10 @@ The project includes role-based access control (Admin, Revisor, Writer) and a fu
 
 <p align="center">
   <img src="screenshots/IMG_0005.png" width="450" height="400"/>
-  <img src="screenshots/IMG_0006.png" width="450" height="400"/>
+  <img src="screenshots/IMG_0007.png" width="450" height="400"/>
 </p>
 
 <p align="center">
-  <img src="screenshots/IMG_0007.png" width="450" height="400"/>
   <img src="screenshots/IMG_0008.png" width="450" height="400"/>
 </p>
 
