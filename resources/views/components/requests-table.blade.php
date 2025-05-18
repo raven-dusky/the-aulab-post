@@ -19,21 +19,21 @@
                         <form action="{{ route('admin.setAdmin', $user) }}" method="POST">
                             @csrf
                             @method('PUT')
-                            <button type="submit" class="btn btn-secondary">Attiva {{ $role }}</button>
+                            <button type="submit" class="btn btn-success">Attiva {{ $role }}</button>
                         </form>
                         @break
                     @case('revisore')
                         <form action="{{ route('admin.setRevisor', $user) }}" method="POST">
                             @csrf
                             @method('PUT')
-                            <button type="submit" class="btn btn-secondary">Attiva {{ $role }}</button>
+                            <button type="submit" class="btn btn-success">Attiva {{ $role }}</button>
                         </form>
                         @break
                     @case('redattore')
                         <form action="{{ route('admin.setWriter', $user) }}" method="POST">
                             @csrf
                             @method('PUT')
-                            <button type="submit" class="btn btn-secondary">Attiva {{ $role }}</button>
+                            <button type="submit" class="btn btn-success">Attiva {{ $role }}</button>
                         </form>
                         @break
                 @endswitch

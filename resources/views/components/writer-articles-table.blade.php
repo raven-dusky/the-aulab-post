@@ -23,10 +23,10 @@
                 @endforeach
             </td>
             <td>{{ $article->created_at->format('d/m/Y H:i') }}</td>
-            <td>
+            <td class="d-flex p-3 gap-2">
                 <a href="{{ route('article.show', $article) }}" class="btn btn-secondary">Leggi</a>
                 <a href="{{ route('article.edit', $article) }}" class="btn btn-warning text-white">Modifica</a>
-                <form action="{{ route('article.destroy', $article) }}" method="POST" class="d-inline">
+                <form action="{{ route('article.destroy', $article) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Elimina</button>

@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
             'is_pending' => NULL,
         ];
 
-        for($i = 0; $i <= 10; $i++) {
+        for($i = 0; $i <= 25; $i++) {
             Article::create([
                 'title' => 'Articolo #' . $i,
                 'subtitle' => 'Sottotitolo #' . rand(1, 100),
