@@ -65,8 +65,8 @@ Follow these steps to clone and run the project locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/raven-dusky/linqly.me.git
-cd linqly.me
+git clone https://github.com/raven-dusky/the-aulab-post.git
+cd the-aulab-post
 
 # Install dependencies
 composer install
